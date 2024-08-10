@@ -1,0 +1,46 @@
+import React from 'react'
+
+function SearchBarCont() {
+  return (
+    <div>
+              <div className='mt-10 bg-customOrange p-2'>
+        <Container>
+          <div className="flex flex-col md:flex-row items-center space-x-0 md:space-x-4">
+            <div
+              ref={buttonRef}
+              className="relative flex-shrink-0 flex items-center hover:bg-white hover:text-customGreen transition border-2 rounded-xl p-2 cursor-pointer mb-2 md:mb-0"
+              onClick={toggleCategories}
+            >
+              <h1 className="md:text-xl">Catégories</h1>
+              <ArrowDropDownIcon className="top-1 relative" />
+              {showCategories && (
+                <div
+                  ref={categoriesRef}
+                  className="absolute left-0 top-full mt-2 w-48 border-2 rounded-xl p-4 bg-white shadow-lg z-10 transition-all duration-300"
+                >
+                  <h2 className="text-lg text-customDarkGreen font-semibold">Catégories</h2>
+                  <br />
+                  <hr />
+                  <br />
+                  <ul className="space-y-6 text-sm text-customOrange">
+                    <li className="hover:text-customGreen cursor-pointer transition">Electroménager</li>
+                    <li className="hover:text-customGreen cursor-pointer transition">Smart Phone</li>
+                    <li className="hover:text-customGreen cursor-pointer transition">Informatique</li>
+                    <li className="hover:text-customGreen cursor-pointer transition">Informatique</li>
+                    <li className="hover:text-customGreen cursor-pointer transition">Informatique</li>
+                    <li className="hover:text-customGreen cursor-pointer transition">Informatique</li>
+                  </ul>
+                </div>
+              )}
+            </div>
+            <div className="flex-grow w-full md:w-auto">
+              <SearchBar onSearch={handleSearch} />
+            </div>
+          </div>
+        </Container>
+      </div>
+    </div>
+  )
+}
+
+export default SearchBarCont
